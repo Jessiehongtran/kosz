@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Pinterest from './components/pinterest';
 
 interface AppProps {
   text: string;
@@ -44,6 +45,7 @@ export default function App({ text, name= "there" }: AppProps) {
       <p>Hello {name}!</p>
       <button onClick={fetchUser}>Fetch user on click</button>
       {user && <p>{`Welcome ${user.name}`}</p>}
+      <Pinterest />
     </div>
   );
 }
