@@ -1,50 +1,37 @@
 import './App.css';
 import Pinterest from './components/pinterest';
+import Search from './components/search';
+import React from 'react';
+import { images } from './data/images';
 
-interface AppProps {
-  text: string;
-  name?: string
-}
+export default class App extends React.Component<any,any> {
+  constructor(props){
+    super(props);
+    this.state= {
+      images: images
+    }
+    this.filterImages = this.filterImages.bind(this)
+  }
 
-// interface User {
-//   name: string,
-//   age: number,
-//   country: string,
-//   address: {
-//     street: string,
-//     number: number,
-//     zip: string
-//   },
-//   admin: boolean
-// }
+  filterImages(searchValue){
+    const curImages  = this.state.images;
+    if (searchValue.length > 0){
+      const filtered = curImages.filter(image => image.title.toLowerCase().includes(searchValue.toLowerCase()))
+      this.setState({ images: filtered })
+    } else {
+      this.setState({ images: images })
+    }
+  
+  }
 
-export default function App({ text, name= "there" }: AppProps) {
+  render(){
 
-  // const [user, setUser] = useState<User | null>(null);
-
-  // const fetchUser = () => {
-  //   setUser({
-  //     name: "Mitchell",
-  //     age: 23,
-  //     country: "the Netherlands",
-  //     address: {
-  //       street: "Main st.",
-  //       number: 88,
-  //       zip: "21345"
-  //     },
-  //     admin: false
-  //   })
-  // }
-
-  return (
-    <div className="App">
-      {/* KOSZ
-      <p>{text}</p>
-      <p>Hello {name}!</p>
-      <button onClick={fetchUser}>Fetch user on click</button>
-      {user && <p>{`Welcome ${user.name}`}</p>} */}
-      <Pinterest />
-    </div>
-  );
+    return (
+      <div className="App" onBlur={() => this.setState({ images: images }) }>
+        <Search filterImages={this.filterImages} />
+        <Pinterest images={this.state.images} />
+      </div>
+    );
+  }
 }
 
