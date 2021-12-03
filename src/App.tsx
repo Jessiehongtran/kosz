@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './App.css';
 import Pinterest from './components/pinterest';
 
@@ -7,17 +6,17 @@ interface AppProps {
   name?: string
 }
 
-interface User {
-  name: string,
-  age: number,
-  country: string,
-  address: {
-    street: string,
-    number: number,
-    zip: string
-  },
-  admin: boolean
-}
+// interface User {
+//   name: string,
+//   age: number,
+//   country: string,
+//   address: {
+//     street: string,
+//     number: number,
+//     zip: string
+//   },
+//   admin: boolean
+// }
 
 export default function App({ text, name= "there" }: AppProps) {
 
