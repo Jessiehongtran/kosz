@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Pinterest from './components/pinterest';
 
@@ -22,21 +21,21 @@ interface User {
 
 export default function App({ text, name= "there" }: AppProps) {
 
-  const [user, setUser] = useState<User | null>(null);
+  // const [user, setUser] = useState<User | null>(null);
 
-  const fetchUser = () => {
-    setUser({
-      name: "Mitchell",
-      age: 23,
-      country: "the Netherlands",
-      address: {
-        street: "Main st.",
-        number: 88,
-        zip: "21345"
-      },
-      admin: false
-    })
-  }
+  // const fetchUser = () => {
+  //   setUser({
+  //     name: "Mitchell",
+  //     age: 23,
+  //     country: "the Netherlands",
+  //     address: {
+  //       street: "Main st.",
+  //       number: 88,
+  //       zip: "21345"
+  //     },
+  //     admin: false
+  //   })
+  // }
 
   return (
     <div className="App">
