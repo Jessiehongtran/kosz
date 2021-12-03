@@ -34,7 +34,7 @@ export default class Image extends React.Component<any,any> {
                         alt={image.title} 
                         style={{ borderRadius: '24px', width: '100%'   }}/>
                     {showLinks
-                    ? <div style={{ padding: '30px 20px', position: 'absolute', left: 0, bottom: 0, width: '100%', borderRadius: '0 0 24px 24px' }}>
+                    ? <div style={{ padding: '30px 20px', position: 'absolute', left: 0, bottom: 0, width: '100%', borderRadius: '0 0 24px 24px', display: 'flex' }}>
                         <div style={{ borderRadius: '26px', padding: '6px 10px', backgroundColor: '#F7F7F7', width: '100px', opacity: '0.9'}}>Link</div>
                       </div>
                     : null}

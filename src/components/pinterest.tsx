@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from './image';
-import { images } from '../data/images';
 
 export default class Pinterest extends React.Component<any,any> {
 
