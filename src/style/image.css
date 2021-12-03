@@ -1,0 +1,3 @@
+.each-image:hover {
+    filter: brightness(60%);
+}
