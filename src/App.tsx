@@ -40,11 +40,11 @@ export default function App({ text, name= "there" }: AppProps) {
 
   return (
     <div className="App">
-      KOSZ
+      {/* KOSZ
       <p>{text}</p>
       <p>Hello {name}!</p>
       <button onClick={fetchUser}>Fetch user on click</button>
-      {user && <p>{`Welcome ${user.name}`}</p>}
+      {user && <p>{`Welcome ${user.name}`}</p>} */}
       <Pinterest />
     </div>
   );
